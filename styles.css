@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #0b0f19;
+  color: white;
+}
+
+.topbar {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.container {
+  padding: 16px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.16);
+}
