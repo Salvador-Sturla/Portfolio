@@ -12,6 +12,7 @@
 /* Reset básico */
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -28,6 +29,7 @@ a{
   color: inherit;
   text-decoration: none;
 }
+
 a:hover{
   text-decoration: underline;
 }
@@ -63,6 +65,7 @@ ul{ margin: 10px 0 0; }
   margin: 0;
 }
 
+/* Navegación */
 .nav{
   display: flex;
   gap: 14px;
@@ -79,6 +82,13 @@ ul{ margin: 10px 0 0; }
 .nav a:hover{
   color: var(--text);
   background: rgba(255,255,255,0.06);
+  text-decoration: none;
+}
+
+/* LINK ACTIVO (JS) */
+.nav a.active{
+  color: var(--text);
+  background: rgba(255,255,255,0.10);
   text-decoration: none;
 }
 
@@ -147,9 +157,11 @@ ul{ margin: 10px 0 0; }
   .nav{
     gap: 8px;
   }
+
   .nav a{
     padding: 7px 9px;
   }
+
   .section h2{
     font-size: 22px;
   }
