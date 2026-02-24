@@ -1,12 +1,36 @@
-// 1) Busco los elementos del HTML por ID
-const status = document.getElementById("status");
-const btnCambiar = document.getElementById("btnCambiar");
+// 1) Set current year in footer (if the element exists)
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-// 2) Compruebo que el JS cargó
-status.textContent = "Estado: JS cargó OK ✅";
+// 2) Highlight the active section in the navbar (optional but useful)
+const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+const sections = Array.from(navLinks)
+  .map(a => document.querySelector(a.getAttribute("href")))
+  .filter(Boolean);
 
-// 3) Hago que el botón haga algo al click
-btnCambiar.addEventListener("click", () => {
-  status.textContent = "Estado: tocaste el botón 🎉";
-  alert("Funciona el JavaScript 😄");
-});
+function setActiveLink() {
+  // Pick the section that is closest to the top (with a small offset)
+  const offset = 120;
+  let current = null;
+
+  for (const sec of sections) {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= offset && rect.bottom > offset) {
+      current = sec;
+      break;
+    }
+  }
+
+  navLinks.forEach(a => a.classList.remove("active"));
+  if (current) {
+    const activeLink = document.querySelector(`.nav a[href="#${current.id}"]`);
+    if (activeLink) activeLink.classList.add("active");
+  }
+}
+
+// Run once on load and then on scroll
+setActiveLink();
+window.addEventListener("scroll", setActiveLink, { passive: true });
+window.addEventListener("resize", setActiveLink);
