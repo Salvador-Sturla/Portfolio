@@ -37,7 +37,7 @@ document.querySelectorAll(".slider").forEach((slider) => {
     slides[currentIndex].classList.remove("active");
     currentIndex = (currentIndex + 1) % slides.length;
     slides[currentIndex].classList.add("active");
-  }, 3000); // 3 segundos
+  }, 3000);
 });
 
 // Run once on load and then on scroll
