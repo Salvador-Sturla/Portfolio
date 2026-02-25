@@ -173,14 +173,23 @@ ul{ margin: 10px 0 0; }
 }
 .slider {
   width: 100%;
-  margin: 0.75rem 0;
+  aspect-ratio: 16 / 9;     /* 🔒 altura fija relativa */
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  overflow: hidden;
+  margin: 12px 0;
+  position: relative;
 }
 
 .slider .slide {
-  display: none;
+  position: absolute;
+  inset: 0;                 /* top/right/bottom/left = 0 */
   width: 100%;
-  height: auto;
-  border-radius: 12px; /* opcional */
+  height: 100%;
+  object-fit: contain;      /* 👈 entra completa */
+  object-position: center;
+  display: none;
 }
 
 .slider .slide.active {
