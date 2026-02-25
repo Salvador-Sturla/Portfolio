@@ -172,9 +172,10 @@ ul{ margin: 10px 0 0; }
 .slider {
   position: relative;
   width: 100%;
-  max-width: 800px;
-  height: 450px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: #0f0f0f;
+  border-radius: 12px;
 }
 
 .slide {
